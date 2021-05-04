@@ -11,8 +11,8 @@ import os
 import requests
 import json
 import random
-from datetime import date
 
+from datetime import date
 from dotenv import load_dotenv
 from discord.ext import tasks
 
@@ -62,10 +62,11 @@ async def on_message(message):
     elif msg.startswith('!bitch'):
         await message.channel.send(message.author.name + ' You are a bitch !')
 
-
+# 1440 one day in minutes
 @tasks.loop(minutes=120)
 async def test():
-    channel = client.get_channel(839037327098773505)
+    # channel = client.get_channel(839037327098773505)
+    channel = client.get_channel(838587960541970483)
     quote = get_quote()
     date = '**' + today.strftime("%B %d, %Y") + '**'
     welcome = 'Today we are the: ' + \
@@ -74,4 +75,4 @@ async def test():
     # await channel.send(welcome + '\n' + '_' + quote + '_')
     await channel.send(block_quote)
 
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKENBOTTEST'))

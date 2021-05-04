@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-discord
-=======
 git+https://github.com/Rapptz/discord.py
->>>>>>> 7ec7f2f (Update)
-os
-requests
-random
+requests==2.25.1
 datetime
 dotenv
